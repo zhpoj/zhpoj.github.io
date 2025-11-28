@@ -73,6 +73,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-备份与迁移hexo博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/11/28/%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BBhexo%E5%8D%9A%E5%AE%A2/" class="article-date">
+  <time class="dt-published" datetime="2025-11-28T15:49:50.000Z" itemprop="datePublished">2025-11-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/11/28/%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BBhexo%E5%8D%9A%E5%AE%A2/">备份与迁移hexo博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <span id="more"></span>
+
+<h6 id="1-github的上传文件设置"><a href="#1-github的上传文件设置" class="headerlink" title="1.github的上传文件设置"></a>1.github的上传文件设置</h6><p>​	上传文件至github上的文件，一个网盘的表示类型。</p>
+<p><code>git init</code></p>
+<p><code>git remote add origin git@github.com:zhpoj/backup_hexo.git</code> #链接git数据库</p>
+<p><code>./push.sh #上传文件</code></p>
+<p>​	这个命令需要主动执行才可以将东西上传到github上面。与上面的静态部署不一样。</p>
+<p>![屏幕截图 2025-11-29 000255](.&#x2F;备份与迁移hexo博客&#x2F;屏幕截图 2025-11-29 000255.png)</p>
+<p><code>git clone  ---- #拉取git上的文件（ssh）</code></p>
+<h6 id="2-首先在git上创建一个仓库，私有化。"><a href="#2-首先在git上创建一个仓库，私有化。" class="headerlink" title="2.首先在git上创建一个仓库，私有化。"></a>2.首先在git上创建一个仓库，私有化。</h6><h1 id="1-迁移"><a href="#1-迁移" class="headerlink" title="1.迁移"></a>1.迁移</h1><h2 id="1-1将hexo的环境安装好"><a href="#1-1将hexo的环境安装好" class="headerlink" title="1.1将hexo的环境安装好"></a>1.1将hexo的环境安装好</h2><p>![屏幕截图 2025-11-29 001022](.&#x2F;备份与迁移hexo博客&#x2F;屏幕截图 2025-11-29 001022.png)</p>
+<p>​	nmp install的命令是为了添加模块，需要在myblog中执行<br>​	<code>hexo s</code>即可正常运行</p>
+<p>![屏幕截图 2025-11-29 001352](.&#x2F;备份与迁移hexo博客&#x2F;屏幕截图 2025-11-29 001352.png)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhpoj.github.io/2025/11/28/%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BBhexo%E5%8D%9A%E5%AE%A2/" data-id="cmij2c6il0000302m4c028gcu" data-title="备份与迁移hexo博客" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-测试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/11/28/%E6%B5%8B%E8%AF%95/" class="article-date">
@@ -320,6 +370,10 @@
       <ul>
         
           <li>
+            <a href="/2025/11/28/%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BBhexo%E5%8D%9A%E5%AE%A2/">备份与迁移hexo博客</a>
+          </li>
+        
+          <li>
             <a href="/2025/11/28/%E6%B5%8B%E8%AF%95/">测试</a>
           </li>
         
@@ -333,10 +387,6 @@
         
           <li>
             <a href="/2025/11/14/%E4%BD%A0%E5%A5%BD/">你好</a>
-          </li>
-        
-          <li>
-            <a href="/2025/09/02/hello-world/">Hello World</a>
           </li>
         
       </ul>
