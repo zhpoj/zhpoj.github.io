@@ -61,10 +61,10 @@
         
           <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zhpoj.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zhpoj.github.io"></form>
       </div>
     </div>
   </div>
@@ -72,6 +72,65 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-2025-11-29一个界面的系统设计-AI编程模型的选择-CLIPS依赖包的选择" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/12/01/2025-11-29%E4%B8%80%E4%B8%AA%E7%95%8C%E9%9D%A2%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1-AI%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%80%89%E6%8B%A9-CLIPS%E4%BE%9D%E8%B5%96%E5%8C%85%E7%9A%84%E9%80%89%E6%8B%A9/" class="article-date">
+  <time class="dt-published" datetime="2025-12-01T14:34:45.000Z" itemprop="datePublished">2025-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/12/01/2025-11-29%E4%B8%80%E4%B8%AA%E7%95%8C%E9%9D%A2%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1-AI%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%80%89%E6%8B%A9-CLIPS%E4%BE%9D%E8%B5%96%E5%8C%85%E7%9A%84%E9%80%89%E6%8B%A9/">2025.11.29一个界面的系统设计+AI编程模型的选择+CLIPS依赖包的选择</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <span id="more"></span>
+
+<h1 id="1-一个界面的系统设计"><a href="#1-一个界面的系统设计" class="headerlink" title="1.一个界面的系统设计"></a>1.一个界面的系统设计</h1><p>​	1.1提示词的构建：</p>
+<p><code>我需要设计成开始页面是2个按钮选择，其中一个按钮是毛刺，另外一个按钮是开裂。点击其中一个按钮之后，在这个页面跳转到图片显示</code></p>
+<p><code>   页面，注意还是在同一个页面操作；图片显示页面罗列图片，可以上传，然后是匹配完图片之后，下面是故障诊断按钮，还是在这个页面   进行另外一个页面的展示，原核不变，直接展示故障树的第一个层级，双击进入下一个层级检索，不需要其他的按钮。 要求：使用tk组件 页面1：缺陷类型选择 页面2：图片管理与匹配界面 页面3：故障树推理界面</code></p>
+<p>![屏幕截图 2025-12-01 223552](.&#x2F;2025-11-29一个界面的系统设计-AI编程模型的选择-CLIPS依赖包的选择&#x2F;屏幕截图 2025-12-01 223552.png)</p>
+<p>![屏幕截图 2025-12-01 223625](.&#x2F;2025-11-29一个界面的系统设计-AI编程模型的选择-CLIPS依赖包的选择&#x2F;屏幕截图 2025-12-01 223625.png)</p>
+<p>![屏幕截图 2025-12-01 223632](.&#x2F;2025-11-29一个界面的系统设计-AI编程模型的选择-CLIPS依赖包的选择&#x2F;屏幕截图 2025-12-01 223632.png)</p>
+<p>​	1.2进入E:\PythonProject\一个界面故障诊断专家系统</p>
+<p>​	我需要将TEST_03的页面3功能改成TEST01，请将TEST01的功能嵌入TEST_03</p>
+<p>​	1.3我将CLIPS作为一个单独的页面进行操作：<code>CLIPS页面04.py</code></p>
+<p>​	1.4将整体部分作为单独的操作,<code>TEST_06.py</code></p>
+<p>​	1.5页面二部分作为单独操作的页面，<code>类型展示02.py</code>也就是只有图片的展示程序</p>
+<p>​		修改毛刺缺陷和开裂缺陷各自管理一个图片库的JSON文件；点击毛刺缺陷进入图片管理-开裂缺陷页，只保留选择图片上传功能，将清空图片功能删除；并且下次启动程序会自动加载出来已经上传的图片文件。<br>​		可以看到有个uploaded_images文件夹</p>
+<h2 id="2-AI编程的选择"><a href="#2-AI编程的选择" class="headerlink" title="2.AI编程的选择"></a>2.AI编程的选择</h2><p>​	2.1github中的github copilot需要学校的邮箱进行认证，才可以使用claude、github copilot。</p>
+<p>​	2.2</p>
+<h2 id><a href="#" class="headerlink" title></a></h2><h3 id="3-CLIPS安装包的问题"><a href="#3-CLIPS安装包的问题" class="headerlink" title="3.CLIPS安装包的问题"></a>3.CLIPS安装包的问题</h3><p>​	<code>pip install clipspy</code></p>
+<p>​	<code>pip install Pillow</code></p>
+<p>​	<code>pip install mysql-connector-python</code></p>
+<h2 id="4-python打包和依赖管理"><a href="#4-python打包和依赖管理" class="headerlink" title="4.python打包和依赖管理"></a>4.python打包和依赖管理</h2><p>​	<strong>生成当前环境的所有依赖：</strong><code>pip freeze &gt; requirements.txt</code></p>
+<p><code>cffi==2.0.0 clipspy==1.0.6 mysql==0.0.3 mysql-connector-python==9.5.0 mysqlclient==2.2.7 pillow==12.0.0 pycparser==2.23</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhpoj.github.io/2025/12/01/2025-11-29%E4%B8%80%E4%B8%AA%E7%95%8C%E9%9D%A2%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1-AI%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%80%89%E6%8B%A9-CLIPS%E4%BE%9D%E8%B5%96%E5%8C%85%E7%9A%84%E9%80%89%E6%8B%A9/" data-id="cmin97wua00007k2mdrmda00n" data-title="2025.11.29一个界面的系统设计+AI编程模型的选择+CLIPS依赖包的选择" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-备份与迁移hexo博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -111,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/11/28/%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BBhexo%E5%8D%9A%E5%AE%A2/" data-id="cmij2c6il0000302m4c028gcu" data-title="备份与迁移hexo博客" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://zhpoj.github.io/2025/11/28/%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BBhexo%E5%8D%9A%E5%AE%A2/" data-id="cmij2c6il0000302m4c028gcu" data-title="备份与迁移hexo博客" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -152,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/11/28/%E6%B5%8B%E8%AF%95/" data-id="cmij0n8660000142m7arnci8m" data-title="测试" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://zhpoj.github.io/2025/11/28/%E6%B5%8B%E8%AF%95/" data-id="cmij0n8660000142m7arnci8m" data-title="测试" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -199,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/11/28/hexo%E7%9A%84%E5%88%9B%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87/" data-id="cmiixjwof00038c2mdhub3i1f" data-title="hexo的创建以及图片上传" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://zhpoj.github.io/2025/11/28/hexo%E7%9A%84%E5%88%9B%E5%BB%BA%E4%BB%A5%E5%8F%8A%E5%9B%BE%E7%89%87/" data-id="cmiixjwof00038c2mdhub3i1f" data-title="hexo的创建以及图片上传" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -238,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/11/28/hexo%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%9B%E5%BB%BA/" data-id="cmiixjwoe00018c2m3e7e03ya" data-title="hexo文件的创建" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://zhpoj.github.io/2025/11/28/hexo%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%9B%E5%BB%BA/" data-id="cmiixjwoe00018c2m3e7e03ya" data-title="hexo文件的创建" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -276,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/11/14/%E4%BD%A0%E5%A5%BD/" data-id="cmiixjwof00028c2m0q9qgqhv" data-title="你好" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://zhpoj.github.io/2025/11/14/%E4%BD%A0%E5%A5%BD/" data-id="cmiixjwof00028c2m0q9qgqhv" data-title="你好" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -327,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/09/02/hello-world/" data-id="cmiixjwob00008c2m94qxftf0" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://zhpoj.github.io/2025/09/02/hello-world/" data-id="cmiixjwob00008c2m94qxftf0" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -355,9 +414,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">November 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">December 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">November 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">September 2025</a></li></ul>
     </div>
   </div>
 
@@ -365,9 +424,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2025/12/01/2025-11-29%E4%B8%80%E4%B8%AA%E7%95%8C%E9%9D%A2%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1-AI%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%80%89%E6%8B%A9-CLIPS%E4%BE%9D%E8%B5%96%E5%8C%85%E7%9A%84%E9%80%89%E6%8B%A9/">2025.11.29一个界面的系统设计+AI编程模型的选择+CLIPS依赖包的选择</a>
+          </li>
         
           <li>
             <a href="/2025/11/28/%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BBhexo%E5%8D%9A%E5%AE%A2/">备份与迁移hexo博客</a>
@@ -383,10 +446,6 @@
         
           <li>
             <a href="/2025/11/28/hexo%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%9B%E5%BB%BA/">hexo文件的创建</a>
-          </li>
-        
-          <li>
-            <a href="/2025/11/14/%E4%BD%A0%E5%A5%BD/">你好</a>
           </li>
         
       </ul>
