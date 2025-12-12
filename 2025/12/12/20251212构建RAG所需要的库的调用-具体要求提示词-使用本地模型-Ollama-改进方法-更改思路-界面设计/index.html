@@ -4,15 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>张红坡的博客</title>
+  <title>20251212构建RAG所需要的库的调用+具体要求提示词+使用本地模型+Ollama+改进方法 +更改思路+界面设计 | 张红坡的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="写写心得什么的">
-<meta property="og:type" content="website">
-<meta property="og:title" content="张红坡的博客">
-<meta property="og:url" content="http://zhpoj.github.io/index.html">
+  <meta name="description" content="1.所需要的库的调用&#96;&#96;try:&#96;   from langchain_community.document_loaders import PyPDFLoader   from langchain_text_splitters import CharacterTextSplitter   from langchain_community.vectorstores impo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20251212构建RAG所需要的库的调用+具体要求提示词+使用本地模型+Ollama+改进方法 +更改思路+界面设计">
+<meta property="og:url" content="http://zhpoj.github.io/2025/12/12/20251212%E6%9E%84%E5%BB%BARAG%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%BA%93%E7%9A%84%E8%B0%83%E7%94%A8-%E5%85%B7%E4%BD%93%E8%A6%81%E6%B1%82%E6%8F%90%E7%A4%BA%E8%AF%8D-%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%A8%A1%E5%9E%8B-Ollama-%E6%94%B9%E8%BF%9B%E6%96%B9%E6%B3%95-%E6%9B%B4%E6%94%B9%E6%80%9D%E8%B7%AF-%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="张红坡的博客">
-<meta property="og:description" content="写写心得什么的">
+<meta property="og:description" content="1.所需要的库的调用&#96;&#96;try:&#96;   from langchain_community.document_loaders import PyPDFLoader   from langchain_text_splitters import CharacterTextSplitter   from langchain_community.vectorstores impo">
 <meta property="og:locale">
+<meta property="article:published_time" content="2025-12-12T14:04:48.000Z">
+<meta property="article:modified_time" content="2025-12-12T14:05:08.429Z">
 <meta property="article:author" content="张红坡">
 <meta name="twitter:card" content="summary">
   
@@ -71,9 +73,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-20251212构建RAG所需要的库的调用-具体要求提示词-使用本地模型-Ollama-改进方法-更改思路-界面设计" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-20251212构建RAG所需要的库的调用-具体要求提示词-使用本地模型-Ollama-改进方法-更改思路-界面设计" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/12/12/20251212%E6%9E%84%E5%BB%BARAG%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%BA%93%E7%9A%84%E8%B0%83%E7%94%A8-%E5%85%B7%E4%BD%93%E8%A6%81%E6%B1%82%E6%8F%90%E7%A4%BA%E8%AF%8D-%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%A8%A1%E5%9E%8B-Ollama-%E6%94%B9%E8%BF%9B%E6%96%B9%E6%B3%95-%E6%9B%B4%E6%94%B9%E6%80%9D%E8%B7%AF-%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/" class="article-date">
   <time class="dt-published" datetime="2025-12-12T14:04:48.000Z" itemprop="datePublished">2025-12-12</time>
@@ -86,8 +86,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/12/20251212%E6%9E%84%E5%BB%BARAG%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%BA%93%E7%9A%84%E8%B0%83%E7%94%A8-%E5%85%B7%E4%BD%93%E8%A6%81%E6%B1%82%E6%8F%90%E7%A4%BA%E8%AF%8D-%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%A8%A1%E5%9E%8B-Ollama-%E6%94%B9%E8%BF%9B%E6%96%B9%E6%B3%95-%E6%9B%B4%E6%94%B9%E6%80%9D%E8%B7%AF-%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/">20251212构建RAG所需要的库的调用+具体要求提示词+使用本地模型+Ollama+改进方法 +更改思路+界面设计</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      20251212构建RAG所需要的库的调用+具体要求提示词+使用本地模型+Ollama+改进方法 +更改思路+界面设计
     </h1>
   
 
@@ -282,422 +282,20 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-“20250425组会张红坡”" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/12/08/%E2%80%9C20250425%E7%BB%84%E4%BC%9A%E5%BC%A0%E7%BA%A2%E5%9D%A1%E2%80%9D/" class="article-date">
-  <time class="dt-published" datetime="2025-12-08T03:26:05.000Z" itemprop="datePublished">2025-12-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/08/%E2%80%9C20250425%E7%BB%84%E4%BC%9A%E5%BC%A0%E7%BA%A2%E5%9D%A1%E2%80%9D/">“20250425组会张红坡”</a>
-    </h1>
+    <a href="/2025/12/08/%E2%80%9C20250425%E7%BB%84%E4%BC%9A%E5%BC%A0%E7%BA%A2%E5%9D%A1%E2%80%9D/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">“20250425组会张红坡”</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <span id="more"></span>
-
-<p><img src="/2025/12/08/%E2%80%9C20250425%E7%BB%84%E4%BC%9A%E5%BC%A0%E7%BA%A2%E5%9D%A1%E2%80%9D/image-20251208112637980.png" alt="image-20251208112637980"></p>
-<p><img src="/2025/12/08/%E2%80%9C20250425%E7%BB%84%E4%BC%9A%E5%BC%A0%E7%BA%A2%E5%9D%A1%E2%80%9D/image-20251208112657817.png" alt="image-20251208112657817"></p>
-<p><img src="/2025/12/08/%E2%80%9C20250425%E7%BB%84%E4%BC%9A%E5%BC%A0%E7%BA%A2%E5%9D%A1%E2%80%9D/image-20251208112708402.png" alt="image-20251208112708402"></p>
-<p><img src="/2025/12/08/%E2%80%9C20250425%E7%BB%84%E4%BC%9A%E5%BC%A0%E7%BA%A2%E5%9D%A1%E2%80%9D/image-20251208112715229.png" alt="image-20251208112715229"></p>
-<p><img src="/2025/12/08/%E2%80%9C20250425%E7%BB%84%E4%BC%9A%E5%BC%A0%E7%BA%A2%E5%9D%A1%E2%80%9D/image-20251208112719774.png" alt="image-20251208112719774"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/12/08/%E2%80%9C20250425%E7%BB%84%E4%BC%9A%E5%BC%A0%E7%BA%A2%E5%9D%A1%E2%80%9D/" data-id="cmiwlcdtp00006k2mbv7jhton" data-title="“20250425组会张红坡”" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-
-  
-    <article id="post-20251202大论文准备时间-专利书写-开题报告提交-党课" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/12/03/20251202%E5%A4%A7%E8%AE%BA%E6%96%87%E5%87%86%E5%A4%87%E6%97%B6%E9%97%B4-%E4%B8%93%E5%88%A9%E4%B9%A6%E5%86%99-%E5%BC%80%E9%A2%98%E6%8A%A5%E5%91%8A%E6%8F%90%E4%BA%A4-%E5%85%9A%E8%AF%BE/" class="article-date">
-  <time class="dt-published" datetime="2025-12-03T02:46:37.000Z" itemprop="datePublished">2025-12-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/03/20251202%E5%A4%A7%E8%AE%BA%E6%96%87%E5%87%86%E5%A4%87%E6%97%B6%E9%97%B4-%E4%B8%93%E5%88%A9%E4%B9%A6%E5%86%99-%E5%BC%80%E9%A2%98%E6%8A%A5%E5%91%8A%E6%8F%90%E4%BA%A4-%E5%85%9A%E8%AF%BE/">20251202大论文准备时间+专利书写+开题报告提交+党课</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <span id="more"></span>
-
-<h2 id="1-大论文准备时间"><a href="#1-大论文准备时间" class="headerlink" title="1.大论文准备时间"></a>1.大论文准备时间</h2><p>​	一般是一年的四月之前进行答辩，所以是上一年的十二月开始写大论文了，一月份就要完成90%的进度。</p>
-<p>​	提到了一件，别人的拿来用了还是不行的，还需要进行创新。</p>
-<p>​	比如：怎么提升大模型的生成质量？要去研究怎么找到解决办法，将大模型结合应用进去有什么样的优势？需要提出系统性的考虑。</p>
-<p>​	加工进行创造的工作</p>
-<p>​	数据才是最宝贵的资源，数据量越多，越能够佐证研究生的素质。</p>
-<p>​	数据库的内容要足够的夯实。</p>
-<p>​	我的主要章节是大语言模型的事情，我应该如何将我的CLIPS应用到这个上面，写入到我的大论文里面？</p>
-<p>​	实际上他数据库的东西还是他那些知识树的事情。</p>
-<h2 id="2-专利书写"><a href="#2-专利书写" class="headerlink" title="2.专利书写"></a>2.专利书写</h2><p>参考别人的专利，先把初稿写出来，不如直接使用ai给出一个初稿，交给机构，他们再进行反馈，给出修改建议。</p>
-<h2 id="3-开题报告的提交"><a href="#3-开题报告的提交" class="headerlink" title="3.开题报告的提交"></a>3.开题报告的提交</h2><p>扫描上传3个人的</p>
-<h2 id="4-党课"><a href="#4-党课" class="headerlink" title="4.党课"></a>4.党课</h2><h2 id="5-大模型应用开发简历的书写"><a href="#5-大模型应用开发简历的书写" class="headerlink" title="5.大模型应用开发简历的书写"></a>5.大模型应用开发简历的书写</h2><p>想办法参照别人的简历，提升自己的竞争力，补充自己的不足</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/12/03/20251202%E5%A4%A7%E8%AE%BA%E6%96%87%E5%87%86%E5%A4%87%E6%97%B6%E9%97%B4-%E4%B8%93%E5%88%A9%E4%B9%A6%E5%86%99-%E5%BC%80%E9%A2%98%E6%8A%A5%E5%91%8A%E6%8F%90%E4%BA%A4-%E5%85%9A%E8%AF%BE/" data-id="cmipet9dv0001wk2m1lbnfb3d" data-title="20251202大论文准备时间+专利书写+开题报告提交+党课" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hexo图片成功上传" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/12/01/hexo%E5%9B%BE%E7%89%87%E6%88%90%E5%8A%9F%E4%B8%8A%E4%BC%A0/" class="article-date">
-  <time class="dt-published" datetime="2025-12-01T15:46:49.000Z" itemprop="datePublished">2025-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/01/hexo%E5%9B%BE%E7%89%87%E6%88%90%E5%8A%9F%E4%B8%8A%E4%BC%A0/">hexo图片成功上传</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <span id="more"></span>
-
-<p>hexo clean</p>
-<p>hexo g</p>
-<p>![屏幕截图 2025-12-01 234747](&#x2F;hexo图片成功上传&#x2F;屏幕截图 2025-12-01 234747.png)</p>
-<p>![屏幕截图 2025-12-01 234839](&#x2F;hexo图片成功上传&#x2F;屏幕截图 2025-12-01 234839.png)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/12/01/hexo%E5%9B%BE%E7%89%87%E6%88%90%E5%8A%9F%E4%B8%8A%E4%BC%A0/" data-id="cmipet9dx0003wk2mf5i49hfm" data-title="hexo图片成功上传" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-two" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/12/01/two/" class="article-date">
-  <time class="dt-published" datetime="2025-12-01T15:40:53.000Z" itemprop="datePublished">2025-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/01/two/">two</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <span id="more"></span>
-
-<p><img src="/2025/12/01/two/88.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/12/01/two/" data-id="cmipet9dz000awk2mhzjf5gx6" data-title="two" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-one" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/12/01/one/" class="article-date">
-  <time class="dt-published" datetime="2025-12-01T15:13:15.000Z" itemprop="datePublished">2025-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/01/one/">one</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <span id="more"></span>
-
-<p><img src="/2025/12/01/one/55.png" alt="55"></p>
-<p><img src="/2025/12/01/one/25ee75527d3fa9e2e37e77e38f88d6d6.png" alt="25ee75527d3fa9e2e37e77e38f88d6d6"><img src="/2025/12/01/one/2ca55902efd743e0ce5fde3fbe54d1a0.png" alt="2ca55902efd743e0ce5fde3fbe54d1a0"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/12/01/one/" data-id="cmipet9dy0006wk2m1c46feab" data-title="one" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-test02" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/12/01/test02/" class="article-date">
-  <time class="dt-published" datetime="2025-12-01T15:06:35.000Z" itemprop="datePublished">2025-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/01/test02/">test02</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <span id="more"></span>
-
-<p><img src="/2025/12/01/test02/45.png" alt="45"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/12/01/test02/" data-id="cmipet9dz0009wk2m26foeeel" data-title="test02" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-test01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/12/01/test01/" class="article-date">
-  <time class="dt-published" datetime="2025-12-01T14:59:02.000Z" itemprop="datePublished">2025-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/01/test01/">test01</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <span id="more"></span>
-
-<p><img src="/2025/12/01/test01/41.png" alt="41"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/12/01/test01/" data-id="cmipet9dz0008wk2mbibq9l2u" data-title="test01" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/12/01/test/" class="article-date">
-  <time class="dt-published" datetime="2025-12-01T14:46:54.000Z" itemprop="datePublished">2025-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/01/test/">test</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <span id="more"></span>
-
-<p><img src="/2025/12/01/test/41.png" alt="41"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/12/01/test/" data-id="cmipet9dy0007wk2met060a9s" data-title="test" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2025-11-29一个界面的系统设计-AI编程模型的选择-CLIPS依赖包的选择" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/12/01/2025-11-29%E4%B8%80%E4%B8%AA%E7%95%8C%E9%9D%A2%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1-AI%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%80%89%E6%8B%A9-CLIPS%E4%BE%9D%E8%B5%96%E5%8C%85%E7%9A%84%E9%80%89%E6%8B%A9/" class="article-date">
-  <time class="dt-published" datetime="2025-12-01T14:34:45.000Z" itemprop="datePublished">2025-12-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/01/2025-11-29%E4%B8%80%E4%B8%AA%E7%95%8C%E9%9D%A2%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1-AI%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%80%89%E6%8B%A9-CLIPS%E4%BE%9D%E8%B5%96%E5%8C%85%E7%9A%84%E9%80%89%E6%8B%A9/">2025.11.29一个界面的系统设计+AI编程模型的选择+CLIPS依赖包的选择</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <span id="more"></span>
-
-<h1 id="1-一个界面的系统设计"><a href="#1-一个界面的系统设计" class="headerlink" title="1.一个界面的系统设计"></a>1.一个界面的系统设计</h1><p>​	1.1提示词的构建：</p>
-<p><code>我需要设计成开始页面是2个按钮选择，其中一个按钮是毛刺，另外一个按钮是开裂。点击其中一个按钮之后，在这个页面跳转到图片显示</code></p>
-<p><code>   页面，注意还是在同一个页面操作；图片显示页面罗列图片，可以上传，然后是匹配完图片之后，下面是故障诊断按钮，还是在这个页面   进行另外一个页面的展示，原核不变，直接展示故障树的第一个层级，双击进入下一个层级检索，不需要其他的按钮。 要求：使用tk组件 页面1：缺陷类型选择 页面2：图片管理与匹配界面 页面3：故障树推理界面</code></p>
-<p><img src="/2025/12/01/2025-11-29%E4%B8%80%E4%B8%AA%E7%95%8C%E9%9D%A2%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1-AI%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%80%89%E6%8B%A9-CLIPS%E4%BE%9D%E8%B5%96%E5%8C%85%E7%9A%84%E9%80%89%E6%8B%A9/12.png" alt="屏幕截图 2025-12-01 223552"></p>
-<p>![屏幕截图 2025-12-01 223625](.&#x2F;2025-11-29一个界面的系统设计-AI编程模型的选择-CLIPS依赖包的选择&#x2F;屏幕截图 2025-12-01 223625.png)</p>
-<p>![屏幕截图 2025-12-01 223632](.&#x2F;2025-11-29一个界面的系统设计-AI编程模型的选择-CLIPS依赖包的选择&#x2F;屏幕截图 2025-12-01 223632.png)</p>
-<p>​	1.2进入E:\PythonProject\一个界面故障诊断专家系统</p>
-<p>​	我需要将TEST_03的页面3功能改成TEST01，请将TEST01的功能嵌入TEST_03</p>
-<p>​	1.3我将CLIPS作为一个单独的页面进行操作：<code>CLIPS页面04.py</code></p>
-<p>​	1.4将整体部分作为单独的操作,<code>TEST_06.py</code></p>
-<p>​	1.5页面二部分作为单独操作的页面，<code>类型展示02.py</code>也就是只有图片的展示程序</p>
-<p>​		修改毛刺缺陷和开裂缺陷各自管理一个图片库的JSON文件；点击毛刺缺陷进入图片管理-开裂缺陷页，只保留选择图片上传功能，将清空图片功能删除；并且下次启动程序会自动加载出来已经上传的图片文件。<br>​		可以看到有个uploaded_images文件夹</p>
-<h2 id="2-AI编程的选择"><a href="#2-AI编程的选择" class="headerlink" title="2.AI编程的选择"></a>2.AI编程的选择</h2><p>​	2.1github中的github copilot需要学校的邮箱进行认证，才可以使用claude、github copilot。</p>
-<p>​	2.2</p>
-<h2 id><a href="#" class="headerlink" title></a></h2><h3 id="3-CLIPS安装包的问题"><a href="#3-CLIPS安装包的问题" class="headerlink" title="3.CLIPS安装包的问题"></a>3.CLIPS安装包的问题</h3><p>​	<code>pip install clipspy</code></p>
-<p>​	<code>pip install Pillow</code></p>
-<p>​	<code>pip install mysql-connector-python</code></p>
-<h2 id="4-python打包和依赖管理"><a href="#4-python打包和依赖管理" class="headerlink" title="4.python打包和依赖管理"></a>4.python打包和依赖管理</h2><p>​	<strong>生成当前环境的所有依赖：</strong><code>pip freeze &gt; requirements.txt</code></p>
-<p><code>cffi==2.0.0 clipspy==1.0.6 mysql==0.0.3 mysql-connector-python==9.5.0 mysqlclient==2.2.7 pillow==12.0.0 pycparser==2.23</code></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhpoj.github.io/2025/12/01/2025-11-29%E4%B8%80%E4%B8%AA%E7%95%8C%E9%9D%A2%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1-AI%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%80%89%E6%8B%A9-CLIPS%E4%BE%9D%E8%B5%96%E5%8C%85%E7%9A%84%E9%80%89%E6%8B%A9/" data-id="cmipet9dt0000wk2m0gdhcowc" data-title="2025.11.29一个界面的系统设计+AI编程模型的选择+CLIPS依赖包的选择" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
-  </nav>
 
 </section>
         
